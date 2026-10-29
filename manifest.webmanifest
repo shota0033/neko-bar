@@ -1,0 +1,15 @@
+{
+  "name": "猫が来るバー",
+  "short_name": "猫バー",
+  "description": "猫のお客さんが来るバーを、ひとりでのんびり切り盛りするゲーム",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#2b1d15",
+  "theme_color": "#5a3e2c",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

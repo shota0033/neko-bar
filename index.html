@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- スマホで勝手に拡大・縮小されないようにする -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>猫が来るバー</title>
+
+  <!-- ホーム画面に追加したとき、アプリのように全画面で起動するための設定 -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="猫バー">
+  <meta name="theme-color" content="#5a3e2c">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+
+  <!-- 丸みのある文字（読み込めないときは端末の文字で表示） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+  <!-- ゲーム領域（1280×720 で作り、main.js でウィンドウに合わせて拡大縮小する） -->
+  <!-- 中身は view.js が作る -->
+  <div id="stage">
+    <div id="top"></div>    <!-- 上の帯：オープン/クローズ・お盆・小判・音 -->
+    <div id="main"></div>   <!-- 今の画面 -->
+    <div id="nav"></div>    <!-- 下のボタン：画面の切り替え -->
+    <div id="toast"></div>  <!-- 小さなお知らせ -->
+    <div id="modal"></div>  <!-- 材料を選ぶ窓・確認の窓 -->
+  </div>
+
+  <!-- スマホを縦向きにしているときのお知らせ -->
+  <div id="rotate-notice">
+    <div>📱↻</div>
+    <div>スマホを横向きにして遊んでね</div>
+  </div>
+
+  <!-- 読み込む順番が大事：設定 → 絵・音・保存 → 中身 → 画面 → 起動 -->
+  <script src="js/config.js?v=1"></script>
+  <script src="js/art.js?v=1"></script>
+  <script src="js/sound.js?v=1"></script>
+  <script src="js/storage.js?v=1"></script>
+  <script src="js/game.js?v=1"></script>
+  <script src="js/view.js?v=1"></script>
+  <script src="js/main.js?v=1"></script>
+</body>
+</html>
